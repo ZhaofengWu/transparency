@@ -102,7 +102,7 @@ python scripts/split_opacity_pairs.py ${opacity_pairs_file} ${data_dir}
 Use the following comands for training and evaluation:
 
 ```bash
-python train.py --data_dir ${data_dir} --data_type nl --model_name_or_path {gpt2-xl or bert-large-cased} --tokenizer pretrained --pooling_mode {last or avg, depending on the model type, see our paper} {add --scalar_mix for MLM, see our paper} --batch_size 256 --lr 0.00001 --warmup_steps 1000 --output_dir ${output_dir} --epochs 1 --clip_norm 1.0
+python train.py --data_dir ${data_dir} --data_type nl --model_name_or_path {gpt2-xl or bert-large-cased} --tokenizer pretrained --pooling_mode {last or first, depending on the model type, see our paper} --batch_size 256 --lr 0.00001 --warmup_steps 1000 --output_dir ${output_dir} --epochs 1 --clip_norm 1.0
 python evaluate.py --ckpt_path ${output_dir}/best.ckpt --splits test
 ```
 
